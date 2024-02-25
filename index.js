@@ -61,7 +61,8 @@ async function getWordOfTheDay() {
     const data = await res.json();
     word = data.word.toUpperCase();
   } else {
-    word = spanishWords.filter(a => a.length === 5)[Math.floor(Math.random() * spanishWords.length)].toUpperCase();
+    let array = spanishWords.filter(a => a.length === 5);
+    word = array[Math.floor(Math.random() * array.length)].toUpperCase();
   }
   setLoadingState(false);
 
