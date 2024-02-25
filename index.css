@@ -1,0 +1,90 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-family: 'Segoe UI Variable', sans-serif;
+}
+
+body {
+  min-height: 100vh;
+  width: 50%;
+  margin: auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+h1 {
+  margin-bottom: 2rem;
+}
+
+span {
+  display: block;
+  margin-top: 1rem;
+  font-size: 2rem;
+
+  animation: spin 1s linear infinite;
+}
+
+.hidden {
+  visibility: hidden;
+}
+
+.inputs_container {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  gap: 1rem;
+
+  width: fit-content;
+  margin: 1rem auto auto auto;
+}
+
+.inputs_container input {
+  width: 80px;
+  height: 80px;
+  border: 3px solid gray;
+
+  text-align: center;
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: black;
+}
+
+.input--correct-letter {
+  background-color: lightgreen;
+}
+
+.input--wrong-letter {
+  background-color: lightpink;
+}
+
+.input--correct-letter-wrong-position {
+  background-color: lightyellow;
+}
+
+.input--invalid-word {
+  animation: flash-red 0.5s linear 2;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes flash-red {
+  0% {
+    background-color: lightpink;
+  }
+  50% {
+    background-color: red;
+  }
+  100% {
+    background-color: lightpink;
+  }
+}
