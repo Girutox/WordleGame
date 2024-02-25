@@ -10,14 +10,14 @@ const spanishWords = [
   "papel", "arena", "piedra", "trigo", "salud",
   "miedo", "cigar", "fiesta", "lunes", "verde",
   "azote", "balon", "panza", "grano", "luzon",
-  "farol", "puño", "pinar", "bazar", "rueda",
+  "farol", "bazar", "rueda",
   "oroja", "guiso", "reina", "pato", "copas",
   "gorra", "dunas", "navio", "plaza", "ruina",
   "vapor", "caoba", "nariz", "cubos", "garza",
   "timon", "noble", "genio", "tinta", "lindo",
   "villa", "novia", "mundo", "huaco", "nubes",
-  "fiord", "chico", "guapo", "paris", "mango",
-  "pirca", "limon", "aguja", "rocas", "cable",
+  "chico", "guapo", "paris", "mango",
+  "limon", "aguja", "rocas", "cable",
   "canta", "carne", "tarde", "huaca", "golfo",
   "barco", "delta", "pizar", "lente", "arroz",
   "pampa", "giras", "reino", "flota", "picas"
@@ -61,7 +61,7 @@ async function getWordOfTheDay() {
     const data = await res.json();
     word = data.word.toUpperCase();
   } else {
-    word = spanishWords[Math.floor(Math.random() * spanishWords.length)].toUpperCase();
+    word = spanishWords.filter(a => a.length === 5)[Math.floor(Math.random() * spanishWords.length)].toUpperCase();
   }
   setLoadingState(false);
 
